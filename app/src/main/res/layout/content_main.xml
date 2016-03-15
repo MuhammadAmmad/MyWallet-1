@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.vlad.mywallet.MainActivity"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:showIn="@layout/app_bar_main"
+    android:layout_margin="16dp"
+    android:background="@drawable/shape_border_around"
+    android:id="@+id/argi">
+
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.example.vlad.mywallet.FragmentConsumption"
+        android:id="@+id/fragment"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.vlad.mywallet.FragmentIncome"
+        android:id="@+id/fragment2"
+        android:layout_below="@+id/fragment"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.vlad.mywallet.FragmentBalance"
+        android:id="@+id/fragment3"
+        android:layout_below="@+id/fragment2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.vlad.mywallet.FragmentAllIncomeAndConsumption"
+        android:id="@+id/fragment4"
+        android:layout_below="@+id/fragment3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>
+</ScrollView>

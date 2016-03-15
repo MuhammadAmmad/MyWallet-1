@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#ffffff"
+    android:elevation="1dp"
+    android:paddingTop="10dp"
+   >
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_balance_button"
+        android:src="@mipmap/plus"
+        android:background="@drawable/shape_oval_blue"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/separator3"
+        android:layout_alignEnd="@+id/separator3"
+        android:padding="5dp"
+        android:elevation="5dp"
+        android:adjustViewBounds="false"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Ваш баланс"
+        android:background="@drawable/rectangle_rounded_all_blue"
+        android:id="@+id/textView3"
+        android:layout_alignTop="@+id/currency3"
+        android:layout_alignLeft="@+id/separator3"
+        android:layout_alignStart="@+id/separator3"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="#ffffff" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="грн"
+        android:id="@+id/currency3"
+        android:layout_toLeftOf="@+id/view_balance_button"
+        android:layout_toStartOf="@+id/view_balance_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Текущий баланс"
+        android:id="@+id/balance_text"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0,00"
+        android:textColor="#6f6f6f"
+        android:id="@+id/current_balance"
+        android:layout_alignBaseline="@+id/balance_text"
+        android:layout_alignBottom="@+id/balance_text"
+        android:layout_toLeftOf="@+id/add_income_button"
+        android:layout_toStartOf="@+id/view_balance_button" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/separator"
+        android:layout_height="2dp"
+        android:id="@+id/separator3"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_below="@+id/balance_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

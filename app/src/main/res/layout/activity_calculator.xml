@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|bottom"
+    android:columnCount="4"
+    android:orientation="horizontal"
+    tools:context="com.example.vlad.mywallet.Calculator"
+    android:useDefaultMargins="false"
+    android:rowOrderPreserved="true"
+    android:paddingBottom="5dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/lastEquation"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_columnSpan="4"
+        android:layout_gravity="right"
+        android:textColor="#979ca4"
+        android:lines="1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewResInCalc"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_columnSpan="4"
+        android:layout_gravity="fill_horizontal"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        android:gravity="right"
+        android:hint="0"
+        android:textSize="30dp"
+        android:textColor="#46494d"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt;"
+        android:id="@+id/buttonBackSimbol"
+        android:onClick="onButtonBackSimbolClick"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:background="@drawable/shape_border_right_bottom_gray"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="("
+        android:id="@+id/buttonLeftBkt"
+        android:onClick="onButtonLeftBktClick"
+        android:layout_row="3"
+        android:layout_column="2"
+        android:background="@drawable/shape_border_right_bottom_gray"
+        android:layout_margin="0dp"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=")"
+        android:id="@+id/buttonRightBkt"
+        android:onClick="onButtonRightBktClick"
+        android:layout_row="3"
+        android:layout_column="3"
+        android:background="@drawable/shape_border_right_bottom_gray"
+        android:layout_margin="0dp"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="1"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:onClick="onButton1Click"
+        android:layout_margin="0dp"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:id="@+id/buttonClearText"
+        android:onClick="onButtonClearTextClick"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:background="@drawable/shape_border_right_bottom_gray"
+        android:textColor="#fb742e" />
+
+    <Button
+        android:text="2"
+        android:layout_row="4"
+        android:layout_column="1"
+        android:id="@+id/button2"
+        android:onClick="onButton2Click"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4"
+        android:allowUndo="true" />
+
+    <Button
+        android:text="3"
+        android:layout_row="4"
+        android:layout_column="2"
+        android:id="@+id/button3"
+        android:onClick="onButton3Click"
+        android:background="@drawable/shape_border_right_bottom"
+        android:layout_margin="0dp"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:layout_column="3"
+        android:text="/"
+        android:layout_row="4"
+        android:id="@+id/buttonSlash"
+        android:onClick="onButtonSlashClick"
+        android:background="@drawable/shape_border_right_bottom_gray"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="4"
+        android:layout_row="5"
+        android:layout_column="0"
+        android:id="@+id/button4"
+        android:onClick="onButton4Click"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="5"
+        android:layout_row="5"
+        android:layout_column="1"
+        android:id="@+id/button5"
+        android:onClick="onButton5Click"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="6"
+        android:layout_row="5"
+        android:layout_column="2"
+        android:id="@+id/button6"
+        android:onClick="onButton6Click"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="*"
+        android:layout_row="5"
+        android:layout_column="3"
+        android:id="@+id/buttonMultiply"
+        android:onClick="onButtonMultiplyClick"
+        android:background="@drawable/shape_border_right_bottom_gray"
+
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="7"
+        android:layout_row="6"
+        android:layout_column="0"
+        android:id="@+id/button7"
+        android:onClick="onButton7Click"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="8"
+        android:layout_row="6"
+        android:layout_column="1"
+        android:id="@+id/button8"
+        android:onClick="onButton8Click"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="9"
+        android:layout_row="6"
+        android:layout_column="2"
+        android:id="@+id/button9"
+        android:onClick="onButton9Click"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="-"
+        android:layout_row="6"
+        android:layout_column="3"
+        android:id="@+id/buttonMinus"
+        android:onClick="onButtonMinusClick"
+        android:background="@drawable/shape_border_right_bottom_gray"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:layout_gravity="fill"
+        android:layout_columnSpan="2"
+        android:text="0"
+        android:layout_row="7"
+        android:layout_column="0"
+        android:id="@+id/button0"
+        android:onClick="onButton0Click"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="."
+        android:layout_row="7"
+        android:layout_column="2"
+        android:id="@+id/buttonPoint"
+        android:onClick="onButtonPointClick"
+        android:background="@drawable/shape_border_right_bottom"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:text="+"
+        android:layout_rowSpan="2"
+        android:layout_gravity="fill_vertical"
+        android:layout_height="wrap_content"
+        android:layout_row="7"
+        android:layout_column="3"
+        android:id="@+id/buttonPlus"
+        android:onClick="onButtonPlusClick"
+        android:background="@drawable/shape_border_right_bottom_gray"
+        android:textColor="#979ca4" />
+
+    <Button
+        android:layout_columnSpan="3"
+        android:text="="
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="8"
+        android:layout_column="0"
+        android:id="@+id/buttonEqually"
+        android:onClick="onButtonEquallyClick"
+        android:background="@drawable/shape_border_right_bottom_orange"
+        android:textColor="#ffffff"
+        android:layout_gravity="fill_horizontal" />
+
+</GridLayout>
