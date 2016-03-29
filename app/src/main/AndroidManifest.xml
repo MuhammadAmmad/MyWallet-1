@@ -19,8 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Consumption"
+            android:name=".ConsumptionMoney"
             android:label="Ваши расходы"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".IncomeMoney"
+            android:label="Ваши доходы"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden"></activity>
         <activity
@@ -30,5 +35,6 @@
             android:name=".Category"
             android:label="Категории"></activity>
     </application>
+
 
 </manifest>

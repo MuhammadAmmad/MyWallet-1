@@ -1,13 +1,14 @@
 package com.example.vlad.mywallet;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity
@@ -24,9 +26,9 @@ public class MainActivity extends AppCompatActivity
 
     public String APP_PREFERENCES_CATEGORY_SPEND = "mywalletcategoryspend";
     public String APP_PREFERENCES_CATEGORY_INCOME = "mywalletcategoryincome";
-  //  public static final String APP_PREFERENCES_CATEGORY_SPEND = "денег потрачено";
-  //  public static final String APP_PREFERENCES_CATEGORY_INCOME = "categoryincome";
 
+    private DatabaseHelper mDatabaseHelper;
+    private SQLiteDatabase mSqLiteDatabase;
 
 
     @Override
@@ -60,27 +62,45 @@ public class MainActivity extends AppCompatActivity
             settingsCategory.edit().putString("Еда", "Еда").apply();
         }
 
+        SharedPreferences settingsCategoryIncome = getSharedPreferences(APP_PREFERENCES_CATEGORY_INCOME, Context.MODE_PRIVATE);
+        if (!settingsCategoryIncome.contains("Аванс")){
+            settingsCategoryIncome.edit().putString("Аванс", "Аванс").apply();
+        }
 
+//        // суммы расходов и доходов за периоды времени
+        mDatabaseHelper = new DatabaseHelper(this);
+        mSqLiteDatabase = mDatabaseHelper.getReadableDatabase();
+        Cursor cursor = mSqLiteDatabase.query("wallet_table", new String[]{DatabaseHelper.CATEGORY_SPEND_COLUMN,
+                        DatabaseHelper.CASH_COLUMN},
+                null, null,
+                null, null, null);
 
-//        mDatabaseHelper = new DatabaseHelper(this, "wallettable.db", null, 1);
-//
-//        mSqLiteDatabase = mDatabaseHelper.getWritableDatabase();
-//
-//        ContentValues values = new ContentValues();
-//        values.put(DatabaseHelper.DATE_COLUMN, "3213232");
-//        values.put(DatabaseHelper.CASH_COLUMN, 600);
-//        values.put(DatabaseHelper.CATEGORY_COLUMN, "meal");
-//        values.put(DatabaseHelper.COMMENT_COLUMN, "buy some meals at the market");
-//
-//        mSqLiteDatabase.insert("spending", null, values);
+        double sum = 0.0;
+        while(cursor.moveToNext()){
+            Log.d("startVlad", "1");
+            String categoryName = cursor.getString(cursor.getColumnIndex(DatabaseHelper.CATEGORY_SPEND_COLUMN));
+            Log.d("startVlad", "2");
+         //   if (categoryName.length() > 0) {
+                Log.d("startVlad", "3");
+                sum += cursor.getDouble(cursor.getColumnIndex(DatabaseHelper.CASH_COLUMN));
+          //  }
+            Log.d("startVlad", "4");
+        }
+        Log.d("startVlad", "5");
 
-
+            TextView consumptionToday = (TextView) findViewById(R.id.consumption_balance);
+            consumptionToday.setText(String.valueOf(sum));
 
     }
 
     public void onButtonAddConsumptionClick(View view){
-        Intent intent = new Intent(MainActivity.this, Consumption.class);
+        Intent intent = new Intent(MainActivity.this, ConsumptionMoney.class);
           startActivity(intent);
+    }
+
+    public void onButtonAddIncomeClick(View view){
+        Intent intent = new Intent(MainActivity.this, IncomeMoney.class);
+        startActivity(intent);
     }
 
     @Override

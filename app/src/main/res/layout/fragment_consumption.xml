@@ -51,8 +51,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Все расходы"
-        android:id="@+id/all_consumption_text"
+        android:text="За сегодня"
+        android:id="@+id/today_consumption_text"
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2" />
@@ -60,23 +60,110 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="0,00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#6f6f6f"
         android:id="@+id/consumption_balance"
-        android:layout_alignBaseline="@+id/all_consumption_text"
-        android:layout_alignBottom="@+id/all_consumption_text"
+        android:layout_alignBaseline="@+id/today_consumption_text"
+        android:layout_alignBottom="@+id/today_consumption_text"
+        android:layout_toLeftOf="@+id/add_consumption_button"
+        android:layout_toStartOf="@+id/add_consumption_button" />
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/separator_grey"
+        android:layout_height="2dp"
+        android:id="@+id/separator2"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_below="@+id/add_consumption_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/add_consumption_button"
         android:layout_toStartOf="@+id/add_consumption_button" />
 
     <View
         android:layout_width="wrap_content"
-        android:background="@drawable/separator"
+        android:background="@drawable/separator_green"
         android:layout_height="2dp"
         android:id="@+id/separator1"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
-        android:layout_below="@+id/all_consumption_text"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
-    </RelativeLayout>
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="За неделю"
+        android:id="@+id/week_consumption_text"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="грн"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/separator2"
+        android:layout_alignRight="@+id/consumption_balance"
+        android:layout_alignEnd="@+id/consumption_balance" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0,00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#6f6f6f"
+        android:id="@+id/textView12"
+        android:layout_below="@+id/textView10"
+        android:layout_alignRight="@+id/textView10"
+        android:layout_alignEnd="@+id/textView10" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/separator_grey"
+        android:layout_height="2dp"
+        android:id="@+id/separator3"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_below="@+id/textView12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/add_consumption_button"
+        android:layout_toStartOf="@+id/add_consumption_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="За месяц"
+        android:id="@+id/month_consumption_text"
+        android:layout_below="@+id/textView13"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="грн"
+        android:id="@+id/textView13"
+        android:layout_below="@+id/separator3"
+        android:layout_alignRight="@+id/consumption_balance"
+        android:layout_alignEnd="@+id/consumption_balance" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0,00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#6f6f6f"
+        android:id="@+id/textView14"
+        android:layout_below="@+id/textView13"
+        android:layout_alignRight="@+id/textView13"
+        android:layout_alignEnd="@+id/textView13" />
+</RelativeLayout>

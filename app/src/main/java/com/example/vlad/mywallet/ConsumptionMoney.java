@@ -1,6 +1,5 @@
 package com.example.vlad.mywallet;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.ContentValues;
@@ -8,13 +7,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -28,36 +25,35 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 
-public class Consumption extends AppCompatActivity {
+public class ConsumptionMoney extends AppCompatActivity {
 
     final int CAMERA_CAPTURE = 1;
-    private Uri picUri;
+    final int CATEGORY_CAPTURE = 2;
+    final int CALCULATOR_CAPTURE = 3;
+    private Uri mPicUri;
 
-    DatabaseHelper sqlHelper;
+    DatabaseHelper mSqlHelper;
     SQLiteDatabase db;
-    Cursor userCursor;
+    Cursor mUserCursor;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consumption);
+        setContentView(R.layout.activity_new_event);
 
-        // creates a database object
-        sqlHelper = new DatabaseHelper(getApplicationContext());
+        // creates database object
+        mSqlHelper = new DatabaseHelper(getApplicationContext());
 
-        // set default
-        TextView dateDefault = (TextView) findViewById(R.id.txtDateConsumption);
-        TextView timeDefault = (TextView) findViewById(R.id.txtTimeConsumption);
+        // set default time and date
+        TextView dateDefault = (TextView) findViewById(R.id.txtDate);
+        TextView timeDefault = (TextView) findViewById(R.id.txtTime);
 
         final Calendar c = Calendar.getInstance();
-
-        // sets date and time format and set default values
         SimpleDateFormat dateFormat = new SimpleDateFormat("d-MM-yyyy");
         dateDefault.setText(dateFormat.format(c.getTime()));
         SimpleDateFormat timeFormat = new SimpleDateFormat("k:m");
         timeDefault.setText(timeFormat.format(c.getTime()));
-
     }
 
     @Override
@@ -65,10 +61,10 @@ public class Consumption extends AppCompatActivity {
         super.onResume();
 
         // open connection to database
-        db = sqlHelper.getReadableDatabase();
+        db = mSqlHelper.getReadableDatabase();
 
         // get data from database
-        userCursor = db.query(DatabaseHelper.DATABASE_TABLE_WALLET, new String[]{DatabaseHelper.CATEGORY_SPEND_COLUMN,
+        mUserCursor = db.query(DatabaseHelper.DATABASE_TABLE_WALLET, new String[]{DatabaseHelper.CATEGORY_SPEND_COLUMN,
                         DatabaseHelper.COMMENT_COLUMN},
                 null, null,
                 null, null, null);
@@ -77,14 +73,17 @@ public class Consumption extends AppCompatActivity {
     @Override
     public void onDestroy(){
         super.onDestroy();
-        // Закрываем подключения
+        // close connection
         db.close();
-        userCursor.close();
+        mUserCursor.close();
     }
 
-    // метод подымает календарь в диалоге и дает возможность выбрать дату
-    public void onTxtDateConsumptionClick(View view) {
-        final TextView txtDate = (TextView) findViewById(R.id.txtDateConsumption);
+    /**
+     * Pressing on button "calendar" in the pop-up window
+     * called calendar to select a date
+     */
+    public void onButtonDateClick(View view) {
+        final TextView txtDate = (TextView) findViewById(R.id.txtDate);
 
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
@@ -112,13 +111,16 @@ public class Consumption extends AppCompatActivity {
         dpd.show();
     }
 
-    // метод подымает часы в диалоге и дает возможность выбрать время
-    public void onTxtTimeConsumptionClick(View view) {
-        final TextView txtTime = (TextView) findViewById(R.id.txtTimeConsumption);
+    /**
+     * Pressing on text "time" in the pop-up window
+     * called clock select a time
+     */
+    public void onButtonTimeClick(View view) {
+        final TextView txtTime = (TextView) findViewById(R.id.txtTime);
 
-        Calendar mcurrentTime = Calendar.getInstance();
-        int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
-        int minute = mcurrentTime.get(Calendar.MINUTE);
+        Calendar currentTime = Calendar.getInstance();
+        int hour = currentTime.get(Calendar.HOUR_OF_DAY);
+        int minute = currentTime.get(Calendar.MINUTE);
         TimePickerDialog tpd = new TimePickerDialog(this,
                 new TimePickerDialog.OnTimeSetListener() {
                     @Override
@@ -136,11 +138,10 @@ public class Consumption extends AppCompatActivity {
         tpd.show();
     }
 
-    public void onButtonCalculatorClick(View view) {
-        Intent intent = new Intent(Consumption.this, Calculator.class);
-        startActivity(intent);
-    }
-
+    /**
+     * By clicking on the button location, called the map where you
+     * can see the correct address, or see already entered address
+     */
     public void onImageSetLocClick(View view) {
         EditText address = (EditText) findViewById(R.id.locationAddressText);
 
@@ -150,75 +151,105 @@ public class Consumption extends AppCompatActivity {
         startActivity(mapIntent);
     }
 
-    public void onButtonSaveImageClick(View view) {
-        setContentView(R.layout.activity_consumption);
-    }
-
+    /**
+     * pressing the camera button creates a file and calls camera to create and save picture
+     */
     public void makePhotoOfCheck(View view) {
         setContentView(R.layout.make_photo);
         setTitle("Сделайте фото");
 
+        Calendar time = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("d-MM-yyyy-k-m-s");
+        String uniqueName = dateFormat.format(time.getTime());
+
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        File photo = new File(Environment.getExternalStoragePublicDirectory("myWallet"), "Pic1.jpg");
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photo));
-        picUri = Uri.fromFile(photo);
-        startActivityForResult(intent, 1);
+        File file = new File(Environment.getExternalStorageDirectory(),
+                uniqueName);
+        mPicUri = Uri.fromFile(file);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mPicUri);
+        startActivityForResult(intent, CAMERA_CAPTURE);
     }
 
+    public void onButtonSaveImageClick(View view) {
+        setContentView(R.layout.activity_new_event);
+    }
+
+    /**
+     * Calls Activity for create or select category
+     */
+    public void onButtonAddNewCategoryClick(final View view){
+        Intent intent = new Intent(this, Category.class);
+        intent.putExtra("className",getLocalClassName());
+        startActivityForResult(intent, CATEGORY_CAPTURE);
+    }
+
+    /**
+     * Calls method that calls Activity for create or select category
+     */
+    public void onTextAddCategoryClick(final View view){
+        onButtonAddNewCategoryClick(view);
+    }
+
+    /**
+     * Calls calculator
+     */
+    public void onButtonCalculatorClick(View view) {
+        Intent intent = new Intent(ConsumptionMoney.this, Calculator.class);
+        startActivityForResult(intent, CALCULATOR_CAPTURE);
+    }
+
+    /**
+     * Accepts results other activities
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (requestCode == CAMERA_CAPTURE) {
-                if (resultCode == Activity.RESULT_OK) {
-
-                    getContentResolver().notifyChange(picUri, null);
-                    ImageView imageView = (ImageView) findViewById(R.id.picture);
-                    File file = new File(picUri.toString(), "Pic1.jpg");
-                    Uri uri = Uri.fromFile(file);
-                    imageView.setImageURI(uri);
-
-                    try {
-                        Bitmap bitmap = BitmapFactory.decodeFile(picUri.toString());
-                        imageView.setImageBitmap(bitmap);
-                        Toast.makeText(this, picUri.toString(),
-                                Toast.LENGTH_LONG).show();
-                    } catch (Exception e) {
-                        Toast.makeText(this, "Failed to load", Toast.LENGTH_SHORT)
-                                .show();
-                        Log.e("Camera", e.toString());
+        if (requestCode == CAMERA_CAPTURE) { // processing of data on camera activity
+            ImageView mImageView = (ImageView)findViewById(R.id.picture);
+            Toast.makeText(getApplicationContext(), mPicUri.toString(), Toast.LENGTH_LONG).show();
+                // Проверяем, содержит ли результат маленькую картинку
+                if (data != null) {
+                    if (data.hasExtra("data")) {
+                        Bitmap thumbnailBitmap = data.getParcelableExtra("data");
+                        mImageView.setImageBitmap(thumbnailBitmap);
                     }
+                } else {
+                    mImageView.setImageURI(mPicUri);
                 }
-            }
-        } else if (requestCode == 2){
+        } else if (requestCode == CATEGORY_CAPTURE){ // processing of data on category activity
             // set category name
             if (resultCode == RESULT_OK){
                 String newCatNameTxt = data.getStringExtra("catName");
-                TextView categoryConsumption = (TextView)findViewById(R.id.txtCategoryConsumption);
+                TextView categoryConsumption = (TextView)findViewById(R.id.txtCategory);
                 categoryConsumption.setText(newCatNameTxt);
+            }
+        } else if (requestCode == CALCULATOR_CAPTURE){ // processing of data on calculator activity
+            if (resultCode == RESULT_OK) {
+                String sumConsumption = data.getStringExtra("calcRes");
+                EditText editTxtSumm = (EditText) findViewById(R.id.editTxtSumm);
+                editTxtSumm.setText(sumConsumption);
             }
         }
     }
 
-    public void onButtonAddConsumptionCatClick(final View view){
-        Intent intent = new Intent(this, Category.class);
-        startActivityForResult(intent, 2);
-    }
+    /**
+     * Collects data and writes it to the database
+     */
+    public void onButtonSaveEventClick(View view) {
+        db = mSqlHelper.getWritableDatabase();
 
-    public void onButtonSaveConsumptionClick(View view) {
-        db = sqlHelper.getWritableDatabase();
-
-        TextView textDataView = (TextView)findViewById(R.id.txtDateConsumption);
-        TextView textTimeView = (TextView)findViewById(R.id.txtTimeConsumption);
-        TextView textCategoryView = (TextView)findViewById(R.id.txtCategoryConsumption);
+        // collect data from views
+        TextView textDataView = (TextView)findViewById(R.id.txtDate);
+        TextView textTimeView = (TextView)findViewById(R.id.txtTime);
+        TextView textCategoryView = (TextView)findViewById(R.id.txtCategory);
         EditText textSumConsumption = (EditText)findViewById(R.id.editTxtSumm);
         EditText textLocation = (EditText)findViewById(R.id.locationAddressText);
         EditText textPhoto = (EditText)findViewById(R.id.makePhotoText);
         EditText textComment = (EditText)findViewById(R.id.editComment);
 
         if (textSumConsumption.getText().toString().length() > 0) { // check empty sum
+
             // set new values to database
             ContentValues values = new ContentValues();
-
             values.put(DatabaseHelper.DATE_COLUMN, textDataView.getText().toString());
             values.put(DatabaseHelper.TIME_COLUMN, textTimeView.getText().toString());
             values.put(DatabaseHelper.CASH_COLUMN, Double.valueOf(textSumConsumption.getText().toString()));
@@ -230,7 +261,7 @@ public class Consumption extends AppCompatActivity {
             db.insert(DatabaseHelper.DATABASE_TABLE_WALLET, null, values);
 
             Toast.makeText(getApplicationContext(), "Расход сохранен", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Consumption.this, MainActivity.class);
+            Intent intent = new Intent(ConsumptionMoney.this, MainActivity.class);
             startActivity(intent);
         } else {
             Toast.makeText(getApplicationContext(), "Введите сумму", Toast.LENGTH_SHORT).show();
