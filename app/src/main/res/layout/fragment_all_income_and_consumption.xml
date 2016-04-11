@@ -12,24 +12,26 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
+            android:id="@+id/allIncomeButton"
             android:layout_row="0"
             android:layout_column="1"
             android:layout_columnWeight=".5"
-            android:src="@mipmap/ic_income_money"
+            android:src="@mipmap/ic_income"
             android:background="#ffffff"
-            android:layout_weight=".5" />
+            android:layout_weight=".5"
+            android:onClick="onAllIncomeImageClick" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton2"
+            android:id="@+id/allCostsButton"
             android:layout_row="0"
             android:layout_column="2"
             android:layout_columnWeight=".5"
-            android:src="@mipmap/ic_consumption_money"
+            android:src="@mipmap/ic_costs"
             android:background="#ffffff"
-            android:layout_weight=".5" />
+            android:layout_weight=".5"
+            android:onClick="onAllCostsImageClick" />
     </TableRow>
 
     <TableRow

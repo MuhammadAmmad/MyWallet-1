@@ -65,6 +65,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="false"
         android:id="@+id/relativeLayout2"
+        android:onClick="onRowChangeCategoryClick"
         android:padding="16dp">
 
         <TextView
@@ -85,8 +86,7 @@
             android:id="@+id/txtCategory"
             android:layout_below="@+id/textView9"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:onClick="onTextAddCategoryClick"/>
+            android:layout_alignParentStart="true" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -96,8 +96,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:src="@mipmap/arrow_right"
-            android:background="#ffffff"
-            android:onClick="onButtonAddNewCategoryClick" />
+            android:onClick="onImageChangeCategoryClick"
+            android:background="#ffffff" />
 
     </RelativeLayout>
 
@@ -118,15 +118,15 @@
             android:text="Сумма"
             android:id="@+id/textView11"
             android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/editTxtSumm"
-            android:layout_alignStart="@+id/editTxtSumm" />
+            android:layout_alignLeft="@+id/editTxtSum"
+            android:layout_alignStart="@+id/editTxtSum" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editTxtSumm"
+            android:id="@+id/editTxtSum"
             android:hint="Введите сумму"
             android:imeOptions="actionDone"
             android:layout_alignWithParentIfMissing="false"
@@ -140,7 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton4"
-            android:src="@mipmap/calc_icon"
+            android:src="@mipmap/ic_calculator"
             android:background="#00ffffff"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -160,22 +160,12 @@
         android:layout_alignLeft="@+id/relativeLayout3"
         android:layout_alignStart="@+id/relativeLayout3">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Адрес"
-            android:id="@+id/textView7"
-            android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/locationAddressText"
-            android:layout_alignStart="@+id/locationAddressText" />
-
-        <EditText
+        <!--   <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/locationAddressText"
-            android:hint="Введите адрес"
+            android:hint="Узнать курс"
             android:imeOptions="actionDone"
             android:layout_alignWithParentIfMissing="false"
             android:singleLine="true"
@@ -183,18 +173,36 @@
             android:gravity="right"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true" /> -->
+
+        <Spinner
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/spinnerCurrency"
+            android:hint="Узнать курс"
+            android:imeOptions="actionDone"
+            android:layout_alignWithParentIfMissing="false"
+            android:singleLine="true"
+            android:autoText="false"
+            android:entries="@array/currencyList"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="right"
+            android:textAlignment="textEnd"
+            android:layout_alignTop="@+id/mapIcon"
+            android:layout_toEndOf="@+id/mapIcon"
+            android:layout_toRightOf="@+id/mapIcon" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/mapIcon"
-            android:src="@mipmap/icon_map"
+            android:src="@mipmap/ic_carrency"
             android:background="#00ffffff"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:onClick="onImageSetLocClick" />
+            android:layout_alignParentStart="true"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -240,7 +248,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/makePhotoIcon"
-            android:src="@mipmap/icon_photo"
+            android:src="@mipmap/ic_photo"
             android:background="#00ffffff"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -285,7 +293,7 @@
         android:layout_below="@+id/relativeLayout4"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
-        android:background="#00d7c9"
+        android:background="#41B9FF"
         android:textStyle="bold" />
 
 </RelativeLayout>

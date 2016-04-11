@@ -6,7 +6,7 @@
     android:layout_gravity="center|bottom"
     android:columnCount="4"
     android:orientation="horizontal"
-    tools:context="com.example.vlad.mywallet.Calculator"
+    tools:context="com.example.vlad.personalwallet.Calculator"
     android:useDefaultMargins="false"
     android:rowOrderPreserved="true"
     android:paddingBottom="5dp">
