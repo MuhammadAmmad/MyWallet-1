@@ -313,18 +313,5 @@ public class ListCategoryEvent extends AppCompatActivity {
 
         return tableRow;
     }
-/*
-    @Override
-    public void onBackPressed() {
-        if (mTypeCategory.equals(CATEGORY_TYPE_CONSUMPTION)){
-            Intent setIntent = new Intent(ListCategoryEvent.this, AllCosts.class);
-            startActivity(setIntent);
-        } else if (mTypeCategory.equals(CATEGORY_TYPE_INCOME)){
-            Intent setIntent = new Intent(ListCategoryEvent.this, AllIncome.class);
-            startActivity(setIntent);
-        }
-
-    }
-    */
 
 }
