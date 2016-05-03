@@ -31,10 +31,7 @@ import java.util.Map;
  *  available for selection, as well as allows change
  *  name of the category, delete it, or create a new one.
  */
-public class Category extends AppCompatActivity {
-
-    private static final String IMAGE_NAME_CHANGE = "change";
-    private static final String IMAGE_NAME_DELETE = "delete";
+public class Category extends AppCompatActivity implements Constants{
 
     // arrayLists where stored id of elements. Category Name, button to change category,
     // button to remove category and row,  respectively

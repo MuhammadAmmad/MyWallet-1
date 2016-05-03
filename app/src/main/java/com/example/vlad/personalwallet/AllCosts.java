@@ -29,7 +29,7 @@ import java.util.Map;
 public class AllCosts extends AppCompatActivity {
 
     // type category, consumption or income
-    private static final String CONSUMPTION_OR_INCOME = "consumption";
+    private static final String consumptionOrIncome = "consumption";
 
     // variable to indicate current ID
     private int mCurrentId;
@@ -135,7 +135,7 @@ public class AllCosts extends AppCompatActivity {
 
                 Intent intent = new Intent(AllCosts.this, ListCategoryEvent.class);
                 intent.putExtra("catName", String.valueOf(categoryList.get(mCurrentId)));
-                intent.putExtra("ConsumptionOrIncome", CONSUMPTION_OR_INCOME);
+                intent.putExtra("ConsumptionOrIncome", consumptionOrIncome);
                 startActivity(intent);
             }
         };

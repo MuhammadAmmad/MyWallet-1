@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Balance">
 
     <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".Balance"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView"
@@ -23,11 +21,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2016"
                 android:id="@+id/currentNumberOfYear"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textColor="#41B9FF" />
@@ -54,21 +51,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Всего"
+                        android:text="@string/all"
                         android:id="@+id/textView"
                         android:layout_weight=".5"
                         android:textColor="#ffffff"
-                        android:textSize="25dp" />
+                        android:textSize="25sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month0"
                         android:layout_weight=".5"
-                        android:gravity="right"
+                        android:gravity="end"
                         android:textColor="#ffffff"
-                        android:textSize="25dp" />
+                        android:textSize="25sp" />
                 </TableRow>
 
                 <TableRow
@@ -82,17 +79,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Январь"
+                        android:text="@string/january"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month1"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -106,17 +103,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Февраль"
+                        android:text="@string/february"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month2"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -130,17 +127,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Март"
+                        android:text="@string/march"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month3"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -154,17 +151,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Апрель"
+                        android:text="@string/april"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month4"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -178,17 +175,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Май"
+                        android:text="@string/may"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month5"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -202,17 +199,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Июнь"
+                        android:text="@string/june"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month6"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -226,17 +223,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Июль"
+                        android:text="@string/july"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month7"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -250,17 +247,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Август"
+                        android:text="@string/august"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month8"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -274,17 +271,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Сентябрь"
+                        android:text="@string/september"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month9"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -298,17 +295,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Октябрь"
+                        android:text="@string/october"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month10"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -322,17 +319,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Ноябрь"
+                        android:text="@string/november"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month11"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
                 <TableRow
@@ -346,17 +343,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Декабрь"
+                        android:text="@string/december"
                         android:layout_weight=".5" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="0.00"
+                        android:text="@string/empty_double"
                         android:id="@+id/month12"
                         android:layout_weight=".5"
-                        android:gravity="right" />
+                        android:gravity="end" />
                 </TableRow>
 
             </TableLayout>
@@ -385,5 +382,3 @@
 
         </RelativeLayout>
     </ScrollView>
-
-</RelativeLayout>

@@ -13,19 +13,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/allIncomeButton"
-            android:layout_row="0"
             android:layout_column="1"
             android:layout_columnWeight=".5"
             android:src="@mipmap/ic_income"
             android:background="#ffffff"
-            android:layout_weight=".5"
-            android:onClick="onAllIncomeImageClick" />
+            android:onClick="onAllIncomeImageClick"
+            android:layout_weight=".5" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/allCostsButton"
-            android:layout_row="0"
             android:layout_column="2"
             android:layout_columnWeight=".5"
             android:src="@mipmap/ic_costs"
@@ -42,23 +40,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Все доходы"
+            android:text="@string/all_income"
             android:id="@+id/textView4"
-            android:layout_row="1"
             android:layout_column="1"
             android:layout_weight=".5"
-            android:textAlignment="center" />
+            android:gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Все расходы"
+            android:text="@string/all_costs"
             android:id="@+id/textView5"
-            android:layout_row="1"
             android:layout_column="2"
             android:layout_weight=".5"
-            android:textAlignment="center" />
+            android:gravity="center_horizontal" />
     </TableRow>
 
 </TableLayout>

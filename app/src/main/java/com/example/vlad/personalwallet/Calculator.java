@@ -15,8 +15,6 @@ import java.util.Stack;
 import java.util.Vector;
 
 /**
- * Created by Vlad on 13.03.2016.
- *
  * This class is a calculator. Using the algorithm sorting
  * station turns into a kind of equation Reverse Polish Notation,
  * and then solves equation on the basis of this entry.
@@ -32,10 +30,6 @@ public class Calculator extends AppCompatActivity {
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
-    /**
-     * Create menu. Menu contains only one button, when clicked,
-     * result of the equation is passed to another activity
-     */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.ok, menu);
         return true;
@@ -60,7 +54,6 @@ public class Calculator extends AppCompatActivity {
         }
         resTxt = resTxt.substring(startIndex, resTxt.length());
 
-        // put result to send
         Intent intent = new Intent();
         intent.putExtra("calcRes", resTxt);
         setResult(Activity.RESULT_OK, intent);
@@ -68,79 +61,47 @@ public class Calculator extends AppCompatActivity {
         finish();
     }
 
-    /**
-     * Pressing the 1 button is added to equation an appropriate sign
-     */
+
     public void onButton1Click(View view) {
         addTextToString("1");
     }
 
-    /**
-     * Pressing the 2 button is added to equation an appropriate sign
-     */
     public void onButton2Click(View view) {
         addTextToString("2");
     }
 
-    /**
-     * Pressing the 3 button is added to equation an appropriate sign
-     */
     public void onButton3Click(View view) {
         addTextToString("3");
     }
 
-    /**
-     * Pressing the 4 button is added to equation an appropriate sign
-     */
     public void onButton4Click(View view) {
         addTextToString("4");
     }
 
-    /**
-     * Pressing the 5 button is added to equation an appropriate sign
-     */
     public void onButton5Click(View view) {
         addTextToString("5");
     }
 
-    /**
-     * Pressing the 6 button is added to equation an appropriate sign
-     */
     public void onButton6Click(View view) {
         addTextToString("6");
     }
 
-    /**
-     * Pressing the 7 button is added to equation an appropriate sign
-     */
     public void onButton7Click(View view) {
         addTextToString("7");
     }
 
-    /**
-     * Pressing the 8 button is added to equation an appropriate sign
-     */
     public void onButton8Click(View view) {
         addTextToString("8");
     }
 
-    /**
-     * Pressing the 9 button is added to equation an appropriate sign
-     */
     public void onButton9Click(View view) {
         addTextToString("9");
     }
 
-    /**
-     * Pressing the 0 button is added to equation an appropriate sign
-     */
     public void onButton0Click(View view) {
         addTextToString("0");
     }
 
-    /**
-     * Pressing the "." button is added to expression an appropriate sign
-     */
     public void onButtonPointClick(View view) {
         EditText mViewResCalc = (EditText) findViewById(R.id.viewResInCalc);
 
@@ -256,16 +217,10 @@ public class Calculator extends AppCompatActivity {
         }
     }
 
-    /**
-     * Pressing the ")" button is added to equation an appropriate sign
-     */
     public void onButtonRightBktClick(View view) {
         addTextToString(")");
     }
 
-    /**
-     * Pressing the "(" button is added to equation an appropriate sign
-     */
     public void onButtonLeftBktClick(View view) {
         addTextToString("(");
     }

@@ -1,5 +1,43 @@
 <resources>
     <string name="app_name">Персональный кошелек</string>
+    <string name="all">Всего :</string>
+    <string name="currency_name">грн</string>
+    <string name="january">Январь</string>
+    <string name="february">Февраль</string>
+    <string name="march">Март</string>
+    <string name="april">Апрель</string>
+    <string name="may">Май</string>
+    <string name="june">Июнь</string>
+    <string name="july">Июль</string>
+    <string name="august">Август</string>
+    <string name="september">Сентябрь</string>
+    <string name="october">Октябрь</string>
+    <string name="november">Ноябрь</string>
+    <string name="december">Декабрь</string>
+    <string name="empty_double">0.00</string>
+    <string name="get_currency">Получить курс валют</string>
+    <string name="currency_sum">Сумма валюты</string>
+    <string name="exchange_rate">Курс валюты к гривне</string>
+    <string name="save">Сохранить</string>
+    <string name="date_and_time">Дата и время</string>
+    <string name="select_data">Выберите дату</string>
+    <string name="category">Категория</string>
+    <string name="no_select">не выбрано</string>
+    <string name="sum">Сумма</string>
+    <string name="enter_sum">Введите сумму</string>
+    <string name="know_exchange_rate">Узнать курс</string>
+    <string name="photo">Фото</string>
+    <string name="add_check">Добавьте чек</string>
+    <string name="comment">Комментарий</string>
+    <string name="all_costs">Все расходы</string>
+    <string name="all_income">Все доходы</string>
+    <string name="your_balance">Ваш баланс</string>
+    <string name="for_all_time">За все время</string>
+    <string name="for_month">За месяц</string>
+    <string name="for_week">За неделю</string>
+    <string name="for_today">За сегодня</string>
+    <string name="your_costs">Ваши расходы</string>
+    <string name="your_income">Ваши доходы</string>
 
     <string-array name="currencyList">
         <item>Валюта</item>

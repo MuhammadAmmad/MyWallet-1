@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minHeight="60dp" >
+
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_vertical_margin"
     android:layout_margin="16dp"
     android:background="@drawable/shape_border_around">
 
@@ -25,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Дата и время"
+            android:text="@string/date_and_time"
             android:id="@+id/textView6"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -35,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:hint="Выберите дату"
+            android:hint="@string/select_data"
             android:onClick="onButtonDateClick"
             android:id="@+id/txtDate"
             android:layout_below="@+id/textView6"
@@ -47,7 +43,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="18:00"
             android:id="@+id/txtTime"
             android:onClick="onButtonTimeClick"
             android:layout_alignTop="@+id/txtDate"
@@ -72,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Категория"
+            android:text="@string/category"
             android:id="@+id/textView9"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -82,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="не выбрано"
+            android:text="@string/no_select"
             android:id="@+id/txtCategory"
             android:layout_below="@+id/textView9"
             android:layout_alignParentLeft="true"
@@ -115,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Сумма"
+            android:text="@string/sum"
             android:id="@+id/textView11"
             android:layout_alignParentTop="true"
             android:layout_alignLeft="@+id/editTxtSum"
@@ -127,11 +122,10 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/editTxtSum"
-            android:hint="Введите сумму"
+            android:hint="@string/enter_sum"
             android:imeOptions="actionDone"
             android:layout_alignWithParentIfMissing="false"
-            android:autoText="false"
-            android:gravity="right"
+            android:gravity="end"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
@@ -160,39 +154,23 @@
         android:layout_alignLeft="@+id/relativeLayout3"
         android:layout_alignStart="@+id/relativeLayout3">
 
-        <!--   <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:id="@+id/locationAddressText"
-            android:hint="Узнать курс"
-            android:imeOptions="actionDone"
-            android:layout_alignWithParentIfMissing="false"
-            android:singleLine="true"
-            android:autoText="false"
-            android:gravity="right"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" /> -->
-
         <Spinner
-            android:layout_width="40px"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/spinnerCurrency"
-            android:hint="Узнать курс"
+            android:hint="@string/know_exchange_rate"
             android:imeOptions="actionDone"
             android:layout_alignWithParentIfMissing="false"
             android:singleLine="true"
-            android:autoText="false"
             android:entries="@array/currencyList"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:gravity="right"
             android:textAlignment="textEnd"
             android:layout_alignTop="@+id/mapIcon"
             android:layout_toEndOf="@+id/mapIcon"
-            android:layout_toRightOf="@+id/mapIcon" />
+            android:layout_toRightOf="@+id/mapIcon"
+            android:gravity="end|center_horizontal" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -219,7 +197,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Фото"
+            android:text="@string/photo"
             android:id="@+id/textView8"
             android:layout_alignParentTop="true"
             android:layout_alignLeft="@+id/makePhotoText"
@@ -230,12 +208,11 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/makePhotoText"
-            android:hint="Добавьте чек"
+            android:hint="@string/add_check"
             android:imeOptions="actionDone"
             android:layout_alignWithParentIfMissing="false"
             android:singleLine="true"
-            android:autoText="false"
-            android:gravity="right"
+            android:gravity="end"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -263,6 +240,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -280,14 +258,14 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:singleLine="true"
-            android:hint="Комментарий" />
+            android:hint="@string/comment" />
 
     </RelativeLayout>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Сохранить"
+        android:text="@string/save"
         android:id="@+id/buttonSaveEvent"
         android:onClick="onButtonSaveEventClick"
         android:layout_below="@+id/relativeLayout4"

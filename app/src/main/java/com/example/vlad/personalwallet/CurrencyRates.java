@@ -45,7 +45,7 @@ public class CurrencyRates extends AppCompatActivity {
         setContentView(R.layout.activity_currency_rates);
 
         currencyName = getIntent().getExtras().getString("CurrencyName");
-        TextView currencyNameView = (TextView)findViewById(R.id.currensyName);
+        TextView currencyNameView = (TextView)findViewById(R.id.currencyName);
         currencyNameView.setText(currencyName);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
@@ -66,7 +66,7 @@ public class CurrencyRates extends AppCompatActivity {
      * and multiplies sum of exchange rate, and sets result
      */
     public void onButtonEqualsClick(View view) {
-        TextView sumCurrency = (TextView)findViewById(R.id.sumCarency);
+        TextView sumCurrency = (TextView)findViewById(R.id.sumCurrency);
         TextView valueOfCurrency = (TextView)findViewById(R.id.valueOfCurrency);
 
         double resSumDouble = Double.valueOf(sumCurrency.getText().toString()) *

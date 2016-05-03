@@ -3,12 +3,10 @@ package com.example.vlad.personalwallet;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TableLayout;
@@ -31,7 +29,7 @@ import java.util.Map;
 public class AllIncome extends AppCompatActivity {
 
     // type category, consumption or income
-    private static final String CONSUMPTION_OR_INCOME = "income";
+    private static final String consumptionOrIncome = "income";
 
     // variable to indicate current ID
     private int mCurrentId;
@@ -137,7 +135,7 @@ public class AllIncome extends AppCompatActivity {
 
                 Intent intent = new Intent(AllIncome.this, ListCategoryEvent.class);
                 intent.putExtra("catName", String.valueOf(categoryList.get(mCurrentId)));
-                intent.putExtra("ConsumptionOrIncome", CONSUMPTION_OR_INCOME);
+                intent.putExtra("ConsumptionOrIncome", consumptionOrIncome);
                 startActivity(intent);
             }
         };

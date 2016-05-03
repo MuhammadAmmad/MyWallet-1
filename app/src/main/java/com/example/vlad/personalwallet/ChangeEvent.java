@@ -6,7 +6,6 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -33,12 +31,7 @@ import java.util.Calendar;
  * of the recording and allows to any change to it
  */
 
-public class ChangeEvent extends AppCompatActivity {
-
-    final int CAMERA_CAPTURE = 1;
-    final int CATEGORY_CAPTURE = 2;
-    final int CALCULATOR_CAPTURE = 3;
-    final int CURRENCY = 4;
+public class ChangeEvent extends AppCompatActivity implements Constants{
 
     // this variable will store information about that to which
     // action relates record (to the consumption or income)
@@ -218,9 +211,6 @@ public class ChangeEvent extends AppCompatActivity {
      * and calls camera to create and save picture
      */
     public void makePhotoOfCheck(View view) {
-        setContentView(R.layout.make_photo);
-        setTitle("Сделайте фото");
-
         Calendar time = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-k-m-s");
         String uniqueName = dateFormat.format(time.getTime());
@@ -231,10 +221,6 @@ public class ChangeEvent extends AppCompatActivity {
         mPicUri = Uri.fromFile(file);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, mPicUri);
         startActivityForResult(intent, CAMERA_CAPTURE);
-    }
-
-    public void onButtonSaveImageClick(View view) {
-        setContentView(R.layout.activity_new_event);
     }
 
     /**
@@ -268,17 +254,17 @@ public class ChangeEvent extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_CAPTURE) { // processing of data on camera activity
-            ImageView mImageView = (ImageView)findViewById(R.id.picture);
+            //ImageView mImageView = (ImageView)findViewById(R.id.picture);
             Toast.makeText(getApplicationContext(), mPicUri.toString(), Toast.LENGTH_LONG).show();
                 // Check does the thumbnail results
-                if (data != null) {
-                    if (data.hasExtra("data")) {
-                        Bitmap thumbnailBitmap = data.getParcelableExtra("data");
-                        mImageView.setImageBitmap(thumbnailBitmap);
-                    }
-                } else {
-                    mImageView.setImageURI(mPicUri);
-                }
+//                if (data != null) {
+//                    if (data.hasExtra("data")) {
+//                        Bitmap thumbnailBitmap = data.getParcelableExtra("data");
+//                        mImageView.setImageBitmap(thumbnailBitmap);
+//                    }
+//                } else {
+//                    mImageView.setImageURI(mPicUri);
+//                }
         } else if (requestCode == CATEGORY_CAPTURE){ // processing of data on category activity
             // set category name
             if (resultCode == RESULT_OK){

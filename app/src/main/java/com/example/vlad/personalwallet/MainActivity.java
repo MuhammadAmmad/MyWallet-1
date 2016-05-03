@@ -10,15 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-
-    public String APP_PREFERENCES_CATEGORY_SPEND = "mywalletcategoryspend";
-    public String APP_PREFERENCES_CATEGORY_INCOME = "mywalletcategoryincome";
-
-    public String FILTER_DAY = "day";
-    public String FILTER_WEEK = "week";
-    public String FILTER_MONTH = "month";
-    public String FILTER_ALL = "all";
+public class MainActivity extends AppCompatActivity implements Constants {
 
     private DatabaseHelper mDatabaseHelper;
     private SQLiteDatabase mSqLiteDatabase;

@@ -25,9 +25,10 @@ import android.widget.Toast;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
- * Created by Vlad on 26.04.2016.
+ * Created by Vlad on 16.03.2016.
  *
  * This class allows the user to create a new entry costs
  * This class allows the user to create a new entry income
@@ -178,27 +179,36 @@ public class IncomeMoney extends AppCompatActivity {
     /**
      * pressing the camera button creates a file and calls camera to create and save picture
      */
-    public void makePhotoOfCheck(View view) {
-        setContentView(R.layout.make_photo);
-        setTitle("Сделайте фото");
+      public void makePhotoOfCheck(View view) {
 
-        Calendar time = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-k-m-s");
-        String uniqueName = dateFormat.format(time.getTime());
+//        Calendar time = Calendar.getInstance();
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-k-m-s");
+//        String uniqueName = dateFormat.format(time.getTime());
+//
+//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        File file = new File(Environment.getExternalStorageDirectory(),
+//                uniqueName);
+//        mPicUri = Uri.fromFile(file);
+//
+//
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, mPicUri);
+//        startActivityForResult(intent, CAMERA_CAPTURE);
 
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        File file = new File(Environment.getExternalStorageDirectory(),
-                uniqueName);
-        mPicUri = Uri.fromFile(file);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, mPicUri);
-        startActivityForResult(intent, CAMERA_CAPTURE);
-    }
+          //camera stuff
+          Intent imageIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+          String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 
-    /**
-     * Calls method that calls activity for create or select category
-     */
-    public void onButtonSaveImageClick(View view) {
-        setContentView(R.layout.activity_new_event);
+            //folder stuff
+//          File imagesFolder = new File(Environment.getExternalStorageDirectory(), "myWallet");
+//          imagesFolder.mkdirs();
+          File imagesFolder = Environment.getExternalStorageDirectory();
+          imagesFolder = new File(imagesFolder, "QR_" + timeStamp + ".jpg");
+
+        //  File image = new File(imagesFolder, "QR_" + timeStamp + ".png");
+          Uri uriSavedImage = Uri.fromFile(imagesFolder);
+
+          imageIntent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
+          startActivityForResult(imageIntent, CAMERA_CAPTURE);
     }
 
     /**
@@ -231,17 +241,17 @@ public class IncomeMoney extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_CAPTURE) { // processing of data on camera activity
-            ImageView mImageView = (ImageView)findViewById(R.id.picture);
-            Toast.makeText(getApplicationContext(), mPicUri.toString(), Toast.LENGTH_LONG).show();
-            // Check does the thumbnail results
-            if (data != null) {
-                if (data.hasExtra("data")) {
-                    Bitmap thumbnailBitmap = data.getParcelableExtra("data");
-                    mImageView.setImageBitmap(thumbnailBitmap);
-                }
-            } else {
-                mImageView.setImageURI(mPicUri);
-            }
+          //  ImageView mImageView = (ImageView)findViewById(R.id.picture);
+          //  Toast.makeText(getApplicationContext(), mPicUri.toString(), Toast.LENGTH_LONG).show();
+//            // Check does the thumbnail results
+//            if (data != null) {
+//                if (data.hasExtra("data")) {
+//                    Bitmap thumbnailBitmap = data.getParcelableExtra("data");
+//                    mImageView.setImageBitmap(thumbnailBitmap);
+//                }
+//            } else {
+//                mImageView.setImageURI(mPicUri);
+//            }
         } else if (requestCode == CATEGORY_CAPTURE){ // processing of data on category activity
             // set category name
             if (resultCode == RESULT_OK){

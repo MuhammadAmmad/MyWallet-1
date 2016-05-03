@@ -27,17 +27,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- * Created by Vlad on 05.04.2016.
+ * Created by Vlad on 16.03.2016.
  *
  * This class allows the user to create a new entry costs
  */
 
-public class ConsumptionMoney extends AppCompatActivity {
+public class ConsumptionMoney extends AppCompatActivity implements Constants{
 
-    final int CAMERA_CAPTURE = 1;
-    final int CATEGORY_CAPTURE = 2;
-    final int CALCULATOR_CAPTURE = 3;
-    final int CURRENCY = 4;
     private Uri mPicUri;
 
     DatabaseHelper mSqlHelper;
@@ -179,8 +175,6 @@ public class ConsumptionMoney extends AppCompatActivity {
      * pressing the camera button creates a file and calls camera to create and save picture
      */
     public void makePhotoOfCheck(View view) {
-        setContentView(R.layout.make_photo);
-        setTitle("Сделайте фото");
 
         Calendar time = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-k-m-s");
@@ -192,10 +186,6 @@ public class ConsumptionMoney extends AppCompatActivity {
         mPicUri = Uri.fromFile(file);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, mPicUri);
         startActivityForResult(intent, CAMERA_CAPTURE);
-    }
-
-    public void onButtonSaveImageClick(View view) {
-        setContentView(R.layout.activity_new_event);
     }
 
     /**
@@ -228,17 +218,17 @@ public class ConsumptionMoney extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_CAPTURE) { // processing of data on camera activity
-            ImageView mImageView = (ImageView)findViewById(R.id.picture);
+         //   ImageView mImageView = (ImageView)findViewById(R.id.picture);
             Toast.makeText(getApplicationContext(), mPicUri.toString(), Toast.LENGTH_LONG).show();
-                // Check does the thumbnail results
-                if (data != null) {
-                    if (data.hasExtra("data")) {
-                        Bitmap thumbnailBitmap = data.getParcelableExtra("data");
-                        mImageView.setImageBitmap(thumbnailBitmap);
-                    }
-                } else {
-                    mImageView.setImageURI(mPicUri);
-                }
+//                // Check does the thumbnail results
+//                if (data != null) {
+//                    if (data.hasExtra("data")) {
+//                        Bitmap thumbnailBitmap = data.getParcelableExtra("data");
+//                        mImageView.setImageBitmap(thumbnailBitmap);
+//                    }
+//                } else {
+//                    mImageView.setImageURI(mPicUri);
+//                }
         } else if (requestCode == CATEGORY_CAPTURE){ // processing of data on category activity
             // set category name
             if (resultCode == RESULT_OK){
