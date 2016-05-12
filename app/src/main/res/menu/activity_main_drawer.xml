@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_main"
+            android:icon="@drawable/ic_wallet"
+            android:title="@string/main"
+            android:checked="true"/>
+
+        <item
+            android:id="@+id/nav_add_spending"
+            android:icon="@drawable/ic_spending"
+            android:title="@string/add_spending" />
+
+        <item
+            android:id="@+id/nav_add_income"
+            android:icon="@drawable/ic_income"
+            android:title="@string/add_income" />
+
+        <item
+            android:id="@+id/nav_balance"
+            android:icon="@drawable/ic_balance"
+            android:title="@string/check_balance" />
+
+        <item
+            android:id="@+id/nav_all_spending"
+            android:icon="@drawable/ic_all_spending"
+            android:title="@string/all_spending" />
+
+        <item
+            android:id="@+id/nav_all_income"
+            android:icon="@drawable/ic_all_income"
+            android:title="@string/all_income" />
+
+        <item
+            android:id="@+id/nav_calculator"
+            android:icon="@drawable/ic_calculator"
+            android:title="@string/calculator" />
+
+        <item
+            android:id="@+id/nav_exchange"
+            android:icon="@drawable/ic_exchange"
+            android:title="@string/exchange_rates" />
+    </group>
+
+</menu>

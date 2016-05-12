@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vlad.wallet.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/argi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_border_around"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/add_spend_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/separator1"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/separator1"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/shape_oval_red"
+            android:elevation="5dp"
+            android:onClick="onButtonAddConsumptionClick"
+            android:padding="5dp"
+            android:src="@mipmap/plus" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_rounded_all_red"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/your_costs"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff"
+            android:layout_alignTop="@+id/currency1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:id="@+id/currency1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/currency_name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignTop="@+id/add_spend_button"
+            android:layout_alignRight="@+id/spend_today"
+            android:layout_alignEnd="@+id/spend_today" />
+
+        <TextView
+            android:id="@+id/today_consumption_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView4"
+            android:text="@string/for_today"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/spend_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/today_consumption_text"
+            android:layout_alignBottom="@+id/today_consumption_text"
+            android:layout_toLeftOf="@+id/add_spend_button"
+            android:layout_toStartOf="@+id/add_spend_button"
+            android:text="@string/empty_double"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6f6f6f" />
+
+        <View
+            android:id="@+id/separator4"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@drawable/separator_grey"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:layout_below="@+id/today_consumption_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/add_spend_button"
+            android:layout_toStartOf="@+id/add_spend_button" />
+
+        <View
+            android:id="@+id/separator1"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/month_consumption_text"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/separator_green"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp" />
+
+        <TextView
+            android:id="@+id/week_consumption_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView10"
+            android:text="@string/for_week"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/spend_today"
+            android:layout_alignRight="@+id/spend_today"
+            android:layout_below="@+id/separator4"
+            android:text="@string/currency_name"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/spend_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView10"
+            android:layout_alignRight="@+id/textView10"
+            android:layout_below="@+id/textView10"
+            android:text="@string/empty_double"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6f6f6f" />
+
+        <View
+            android:id="@+id/separator5"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spend_week"
+            android:layout_toLeftOf="@+id/add_spend_button"
+            android:layout_toStartOf="@+id/add_spend_button"
+            android:background="@drawable/separator_grey"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp" />
+
+        <TextView
+            android:id="@+id/month_consumption_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView13"
+            android:text="@string/for_month"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/spend_today"
+            android:layout_alignRight="@+id/spend_today"
+            android:layout_below="@+id/separator5"
+            android:text="@string/currency_name"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/spend_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView13"
+            android:layout_alignRight="@+id/textView13"
+            android:layout_below="@+id/textView13"
+            android:text="@string/empty_double"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6f6f6f" />
+
+        <ImageButton
+            android:id="@+id/add_income_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="false"
+            android:background="@drawable/shape_oval_green"
+            android:elevation="5dp"
+            android:onClick="onButtonAddIncomeClick"
+            android:padding="5dp"
+            android:src="@mipmap/plus"
+            android:layout_alignTop="@+id/currency2"
+            android:layout_alignLeft="@+id/view_balance_button"
+            android:layout_alignStart="@+id/view_balance_button" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/separator1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rectangle_rounded_all_green"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/your_income"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
+
+
+        <TextView
+            android:id="@+id/currency2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/currency_name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_alignRight="@+id/income_month"
+            android:layout_alignEnd="@+id/income_month" />
+
+        <TextView
+            android:id="@+id/income_balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:text="@string/for_month"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/income_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/separator5"
+            android:layout_below="@+id/currency2"
+            android:text="@string/empty_double"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6f6f6f" />
+
+        <View
+            android:id="@+id/separator6"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_below="@+id/income_balance_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/separator_green"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp" />
+
+
+        <ImageButton
+            android:id="@+id/view_balance_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="false"
+            android:background="@drawable/shape_oval_blue"
+            android:elevation="5dp"
+            android:onClick="onViewBalanceButtonClick"
+            android:padding="5dp"
+            android:src="@mipmap/ic_balance"
+            android:layout_alignTop="@+id/currency3"
+            android:layout_alignLeft="@+id/add_spend_button"
+            android:layout_alignStart="@+id/add_spend_button" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/separator6"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rectangle_rounded_all_blue"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/your_balance"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff" />
+
+
+        <TextView
+            android:id="@+id/currency3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/currency_name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_alignRight="@+id/balance_all_time"
+            android:layout_alignEnd="@+id/balance_all_time" />
+
+        <TextView
+            android:id="@+id/balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_below="@+id/textView3"
+            android:text="@string/for_all_time"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/balance_all_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/income_month"
+            android:layout_below="@+id/currency3"
+            android:text="@string/empty_double"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#6f6f6f" />
+
+        <View
+            android:id="@+id/separator3"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_below="@+id/balance_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/separator_green"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_columnSpan="3"
+            android:layout_below="@+id/separator3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/allIncomeButton"
+                    android:layout_column="1"
+                    android:layout_columnWeight=".5"
+                    android:src="@mipmap/ic_income"
+                    android:background="#ffffff"
+                    android:onClick="onAllIncomeImageClick"
+                    android:layout_weight=".5" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/allSpendButton"
+                    android:layout_column="2"
+                    android:layout_columnWeight=".5"
+                    android:src="@mipmap/ic_costs"
+                    android:background="#ffffff"
+                    android:layout_weight=".5"
+                    android:onClick="onAllCostsImageClick" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/all_income"
+                    android:id="@+id/textView8"
+                    android:layout_column="1"
+                    android:layout_weight=".5"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/all_costs"
+                    android:id="@+id/textView5"
+                    android:layout_column="2"
+                    android:layout_weight=".5"
+                    android:gravity="center_horizontal" />
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+</ScrollView>

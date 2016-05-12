@@ -1,59 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.vlad.personalwallet.MainActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:fitsSystemWindows="true">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/custom_fragment"
+        android:paddingTop="?attr/actionBarSize"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" />
+
+    <include layout="@layout/app_bar_main"/>
+
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer"
+        android:background="#dcdcdc"
+        app:itemIconTint="#333"
+        app:itemTextColor="#333"
+        app:theme="@style/AppTheme"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layout_margin="16dp"
-        android:background="@drawable/shape_border_around"
-        android:id="@+id/argi">
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email"/>
 
-
-        <fragment
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:name="com.example.vlad.personalwallet.FragmentConsumption"
-            android:id="@+id/fragment"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:name="com.example.vlad.personalwallet.FragmentIncome"
-            android:id="@+id/fragment2"
-            android:layout_below="@+id/fragment"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp" />
-
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:name="com.example.vlad.personalwallet.FragmentBalance"
-            android:id="@+id/fragment3"
-            android:layout_below="@+id/fragment2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp" />
-
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:name="com.example.vlad.personalwallet.FragmentAllIncomeAndConsumption"
-            android:id="@+id/fragment4"
-            android:layout_below="@+id/fragment3"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp" />
-
-    </RelativeLayout>
-</ScrollView>
+</android.support.v4.widget.DrawerLayout>

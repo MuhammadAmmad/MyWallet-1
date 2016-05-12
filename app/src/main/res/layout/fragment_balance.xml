@@ -1,88 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:elevation="1dp"
-    android:paddingTop="10dp">
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <ImageButton
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/view_balance_button"
-        android:src="@mipmap/ic_balance"
-        android:background="@drawable/shape_oval_blue"
-        android:onClick="onViewBalanceButtonClick"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/separator3"
-        android:layout_alignEnd="@+id/separator3"
-        android:padding="5dp"
-        android:elevation="5dp"
-        android:adjustViewBounds="false"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"/>
+        android:background="@drawable/shape_border_around"
+        android:padding="@dimen/activity_vertical_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/your_balance"
-        android:background="@drawable/rectangle_rounded_all_blue"
-        android:id="@+id/textView3"
-        android:layout_alignTop="@+id/currency3"
-        android:layout_alignLeft="@+id/separator3"
-        android:layout_alignStart="@+id/separator3"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:textColor="#ffffff" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentNumberOfYear"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="0000"
+            android:textSize="25sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#41B9FF" />
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:id="@+id/imageButtonNextYear"
+            android:background="#ffffff"
+            android:src="@mipmap/ic_arrow_right"
+            android:layout_alignBottom="@+id/currentNumberOfYear"
+            android:layout_toRightOf="@+id/currentNumberOfYear"
+            android:layout_toEndOf="@+id/currentNumberOfYear"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/currency_name"
-        android:id="@+id/currency3"
-        android:layout_toLeftOf="@+id/view_balance_button"
-        android:layout_toStartOf="@+id/view_balance_button" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:id="@+id/imageButtonPrevYear"
+            android:src="@mipmap/ic_arrow_left"
+            android:background="#ffffff"
+            android:layout_alignBottom="@+id/currentNumberOfYear"
+            android:layout_toLeftOf="@+id/currentNumberOfYear"
+            android:layout_toStartOf="@+id/currentNumberOfYear" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/for_all_time"
-        android:id="@+id/balance_text"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
+        <ListView
+            android:id="@+id/lvBalanceMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_below="@+id/relativeLayout2">
+        </ListView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/empty_double"
-        android:textColor="#6f6f6f"
-        android:id="@+id/current_balance"
-        android:layout_alignBaseline="@+id/balance_text"
-        android:layout_alignBottom="@+id/balance_text"
-        android:layout_toStartOf="@+id/view_balance_button"
-        android:layout_toLeftOf="@+id/view_balance_button" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout2"
+            android:layout_below="@+id/currentNumberOfYear"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rectangle_rounded_all_blue"
+            android:layout_marginTop="5dp">
 
-    <View
-        android:layout_width="wrap_content"
-        android:background="@drawable/separator_green"
-        android:layout_height="2dp"
-        android:id="@+id/separator3"
-        android:paddingTop="2dp"
-        android:paddingBottom="2dp"
-        android:layout_below="@+id/balance_text"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/all"
+                android:id="@+id/textView12"
+                android:textColor="#ffffff"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:textSize="20sp" />
 
-</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="0.00"
+                android:id="@+id/balanceOfYear"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="#ffffff"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    </ScrollView>

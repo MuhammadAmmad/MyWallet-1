@@ -4,13 +4,11 @@
 
     <item
         android:id="@+id/item2"
-        android:icon="@mipmap/ic_ok"
-        android:showAsAction="ifRoom"
+        android:icon="@mipmap/ic_action_accept"
         android:title="item2"
         android:orderInCategory="100"
         app:showAsAction="ifRoom|withText"
-        android:onClick="onButtonSaveResultClick"
-        >
+        android:onClick="onButtonSaveResultClick">
 
     </item>
 
