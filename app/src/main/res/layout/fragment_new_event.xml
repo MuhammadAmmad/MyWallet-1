@@ -194,30 +194,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/photo"
-            android:id="@+id/textView8"
-            android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/makePhotoText"
-            android:layout_alignStart="@+id/makePhotoText" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
             android:id="@+id/makePhotoText"
             android:hint="@string/add_check"
-            android:imeOptions="actionDone"
             android:layout_alignWithParentIfMissing="false"
             android:singleLine="true"
             android:gravity="end"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:focusable="false"
             android:longClickable="false"
-            android:cursorVisible="false"
-            android:onClick="makePhotoOfCheck" />
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/makePhotoIcon"
+            android:layout_toEndOf="@+id/makePhotoIcon"
+            android:layout_marginLeft="10dp" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -230,12 +217,13 @@
             android:layout_alignParentStart="true" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView2"
-            android:layout_alignParentBottom="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/checkImage"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/makePhotoText"
+            android:layout_alignParentBottom="true" />
     </RelativeLayout>
 
     <RelativeLayout

@@ -1,3 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Vlad\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\gson-2.6.1_17293bda670329734a02ec0a1824d371e56263f9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Vlad\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_2c619162a5074091612591cd81ede7e8fb2eda7d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Vlad\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_77bd86aeaedb28adec27c65ac633fd616dda2719.jar" />
+    </item>
+    <item
+        jar="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_2662ebae733e5e7a3871b3bedc171b0f052b38e9.jar" />
+    </item>
+    <item
+        jar="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_958d345f10882ae7a571485f9acce427ef08583e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Vlad\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\okio-1.6.0_9a81937cbd582de8a5bdb85892fce9e3558ccd2f.jar" />
+    </item>
+    <item
+        jar="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.0.1_f52c08413b7b4dc538f71d5b5ae07e29b3568085.jar" />
+    </item>
+    <item
+        jar="C:\Users\Vlad\.gradle\caches\modules-2\files-2.1\com.michaelpardo\activeandroid\3.1.0-SNAPSHOT\4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08\activeandroid-3.1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\activeandroid-3.1.0-SNAPSHOT_dd01b8f872ef262ee5013e8af6342985c5571d8b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Vlad\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_e52b4f9290ff12dd6c228f7c0cb55aadf294e15d.jar" />
+    </item>
+    <item
+        jar="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_de386240b7e3e959257cdfedf2fac21e5fe6239f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Vlad\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\retrofit-2.0.2_1ddba96aaff0d8dc1498c2461064eadf7e5dc3fa.jar" />
+    </item>
+    <item
+        jar="C:\Users\Vlad\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\android_2\22.05.16\Wallet\Wallet\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_bf7628fe98bdd6bb74997c30efdf6e929856399c.jar" />
+    </item>
+
+</items>

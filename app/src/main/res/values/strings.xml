@@ -74,11 +74,16 @@
     <string name="select_action">Выберите действие</string>
     <string name="confirm_deletion_action">Вы уверены что хотите удалить эту запись?</string>
     <string name="change">Изменить</string>
+    <string name="error">Ошибка</string>
+    <string name="dollar">Доллар</string>
+    <string name="euro">Евро</string>
+    <string name="ruble">Рубль</string>
+    <string name="something_was_wrong">Что-то пошло не так. Возможно отсутствует соединение с интернетом</string>
 
     <string-array name="currencyList">
         <item>Валюта</item>
-        <item>Доллар</item>
-        <item>Евро</item>
-        <item>Рубль</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>RUR</item>
     </string-array>
 </resources>

@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/get_currency"
-        android:id="@+id/button10"
+        android:id="@+id/buttonGetCurrency"
         android:onClick="onButtonGetCurrencyClick"
         android:background="#41B9FF"
         android:textColor="#ffffff"
@@ -40,20 +40,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="12sp"
-        android:layout_toLeftOf="@+id/progressBar"
-        android:layout_toStartOf="@+id/progressBar" />
+        android:layout_toStartOf="@+id/currencyName"
+        android:layout_toLeftOf="@+id/currencyName"
+        android:layout_marginRight="10dp" />
 
-
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:visibility="invisible"
-        android:layout_below="@+id/resSum"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp">
-    </ProgressBar>
 
         <TextView
         android:layout_width="wrap_content"
@@ -100,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="="
-        android:id="@+id/button11"
+        android:id="@+id/buttonEqually"
         android:layout_below="@+id/valueOfCurrency"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -117,7 +107,7 @@
         android:text="1"
         android:imeOptions="actionDone"
         android:inputType="number"
-        android:layout_below="@+id/button11"
+        android:layout_below="@+id/buttonEqually"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/valueOfCurrency"
@@ -133,12 +123,13 @@
         android:textSize="12sp"
         android:background="#47cf4f"
         android:textColor="#ffffff"
-        android:layout_below="@+id/progressBar"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/progressBar"
-        android:layout_toRightOf="@+id/progressBar"
-        android:onClick="onButtonSaveResultClick" />
+        android:onClick="onButtonSaveResultClick"
+        android:layout_below="@+id/resSum"
+        android:layout_toEndOf="@+id/currencyName"
+        android:layout_toRightOf="@+id/currencyName"
+        android:layout_marginLeft="10dp" />
 
 </RelativeLayout>
 </ScrollView>

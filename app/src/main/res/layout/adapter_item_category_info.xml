@@ -35,11 +35,9 @@
             android:layout_height="wrap_content"
             android:text="Some text! It is a simple comment. Some text! It is a simple comment.  Some text! It is a simple comment.  Some text! It is a simple comment. Some text! It is a simple comment. "
             android:id="@+id/comment"
-            android:layout_below="@+id/dateTime"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@+id/imageSomethingChange"
-            android:layout_toStartOf="@+id/imageSomethingChange" />
+            android:layout_below="@+id/imageSomethingChange"
+            android:layout_toRightOf="@+id/checkImage"
+            android:layout_toEndOf="@+id/checkImage" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,5 +49,13 @@
             android:layout_toStartOf="@+id/imageSomethingChange"
             android:layout_marginRight="10dp"
             android:textColor="#000" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/checkImage"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 </LinearLayout>

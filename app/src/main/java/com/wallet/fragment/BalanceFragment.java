@@ -11,8 +11,8 @@ import android.widget.SimpleAdapter;
 
 import com.activeandroid.ActiveAndroid;
 import com.wallet.R;
-import com.wallet.model.IncomeTable;
-import com.wallet.model.SpendTable;
+import com.wallet.model.IncomeItem;
+import com.wallet.model.SpendItem;
 
 import android.support.v4.app.Fragment;
 import android.widget.TextView;
@@ -25,9 +25,10 @@ import java.util.Map;
 
 
 public class BalanceFragment extends Fragment {
-    View mView;
-    ImageButton mPrevYear, mNextYear;
-    TextView mCurrentYear, mBalanceFromYear;
+
+    private View mView;
+    private ImageButton mPrevYear, mNextYear;
+    private TextView mCurrentYear, mBalanceFromYear;
 
     @Nullable
     @Override
@@ -42,6 +43,29 @@ public class BalanceFragment extends Fragment {
         return mView;
     }
 
+    private void initView() {
+        mPrevYear = (ImageButton) mView.findViewById(R.id.imageButtonPrevYear);
+        mNextYear = (ImageButton) mView.findViewById(R.id.imageButtonNextYear);
+        mCurrentYear = (TextView) mView.findViewById(R.id.currentNumberOfYear);
+        mBalanceFromYear = (TextView) mView.findViewById(R.id.balanceOfYear);
+    }
+
+    private void setValue() {
+        // set default year
+        String defaultYear = new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
+        mCurrentYear.setText(defaultYear);
+
+        // set default all balance from year
+        Double balanceSumOfYear = IncomeItem.getAllSumFromYear(Integer.parseInt(defaultYear))
+                - SpendItem.getAllSumFromYear(Integer.parseInt(defaultYear));
+        mBalanceFromYear.setText(String.valueOf(balanceSumOfYear));
+
+        double[] balanceArray = getArrayOfBalanceFromYear(Integer.valueOf(defaultYear));
+        String[] monthArray = getResources().getStringArray(R.array.all_month);
+        setSimpleAdapter(monthArray, balanceArray);
+
+    }
+
     private void setClickListeners() {
         mPrevYear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,8 +73,8 @@ public class BalanceFragment extends Fragment {
                 int year = Integer.parseInt(mCurrentYear.getText().toString()) - 1;
                 mCurrentYear.setText(String.valueOf(year));
 
-                Double balanceSumOfYear = IncomeTable.getAllSumFromYear(year)
-                        - SpendTable.getAllSumFromYear(year);
+                Double balanceSumOfYear = IncomeItem.getAllSumFromYear(year)
+                        - SpendItem.getAllSumFromYear(year);
                 mBalanceFromYear.setText(String.valueOf(balanceSumOfYear));
 
                 double[] balanceArray = getArrayOfBalanceFromYear(year);
@@ -65,8 +89,8 @@ public class BalanceFragment extends Fragment {
                 int year = Integer.parseInt(mCurrentYear.getText().toString()) + 1;
                 mCurrentYear.setText(String.valueOf(year));
 
-                Double balanceSumOfYear = IncomeTable.getAllSumFromYear(year)
-                        - SpendTable.getAllSumFromYear(year);
+                Double balanceSumOfYear = IncomeItem.getAllSumFromYear(year)
+                        - SpendItem.getAllSumFromYear(year);
                 mBalanceFromYear.setText(String.valueOf(balanceSumOfYear));
 
                 double[] balanceArray = getArrayOfBalanceFromYear(year);
@@ -76,36 +100,13 @@ public class BalanceFragment extends Fragment {
         });
     }
 
-    private void initView() {
-        mPrevYear = (ImageButton)mView.findViewById(R.id.imageButtonPrevYear);
-        mNextYear = (ImageButton)mView.findViewById(R.id.imageButtonNextYear);
-        mCurrentYear = (TextView)mView.findViewById(R.id.currentNumberOfYear);
-        mBalanceFromYear = (TextView)mView.findViewById(R.id.balanceOfYear);
-    }
-
-    private void setValue() {
-        // set default year
-        String defaultYear = new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
-        mCurrentYear.setText(defaultYear);
-
-        // set default all balance from year
-        Double balanceSumOfYear = IncomeTable.getAllSumFromYear(Integer.parseInt(defaultYear))
-                - SpendTable.getAllSumFromYear(Integer.parseInt(defaultYear));
-        mBalanceFromYear.setText(String.valueOf(balanceSumOfYear));
-
-        double[] balanceArray = getArrayOfBalanceFromYear(Integer.valueOf(defaultYear));
-        String[] monthArray = getResources().getStringArray(R.array.all_month);
-        setSimpleAdapter(monthArray, balanceArray);
-
-    }
-
     private double[] getArrayOfBalanceFromYear(Integer numberOfYear) {
         double[] balanceFromYear = new double[12];
 
-        double[] sumSpendFromYear = SpendTable.getSpendArrayOfYear(numberOfYear);
-        double[] sumIncomeFromYear = IncomeTable.getIncomeArrayOfYear(numberOfYear);
+        double[] sumSpendFromYear = SpendItem.getSpendArrayOfYear(numberOfYear);
+        double[] sumIncomeFromYear = IncomeItem.getIncomeArrayOfYear(numberOfYear);
 
-        for (int i = 0; i < balanceFromYear.length; i++){
+        for (int i = 0; i < balanceFromYear.length; i++) {
             balanceFromYear[i] = sumIncomeFromYear[i] - sumSpendFromYear[i];
         }
 
@@ -115,17 +116,17 @@ public class BalanceFragment extends Fragment {
     private void setSimpleAdapter(String[] monthArray, double[] balanceArray) {
         ArrayList<Map<String, Object>> data = new ArrayList<Map<String, Object>>(monthArray.length);
         Map<String, Object> map;
-        for (int i = 0; i < monthArray.length; i++){
-            map = new HashMap<String, Object>();
+        for (int i = 0; i < monthArray.length; i++) {
+            map = new HashMap<>();
             map.put("monthName", monthArray[i]);
             map.put("balanceValueOfMonth", balanceArray[i]);
             data.add(map);
         }
 
         String[] from = {"monthName", "balanceValueOfMonth"};
-        int to [] = {R.id.monthName, R.id.sumOfMonth};
+        int to[] = {R.id.monthName, R.id.sumOfMonth};
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(mView.getContext(), data, R.layout.adapter_item_balance, from, to);
-        ((ListView)mView.findViewById(R.id.lvBalanceMain)).setAdapter(simpleAdapter);
+        ((ListView) mView.findViewById(R.id.lvBalanceMain)).setAdapter(simpleAdapter);
     }
 }

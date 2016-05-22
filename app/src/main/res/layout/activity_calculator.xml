@@ -42,8 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="&lt;"
-        android:id="@+id/buttonBackSimbol"
-        android:onClick="onButtonBackSimbolClick"
+        android:id="@+id/buttonBackSymbol"
         android:layout_row="3"
         android:layout_column="1"
         android:background="@drawable/shape_border_right_bottom_gray"
@@ -55,7 +54,6 @@
         android:layout_height="wrap_content"
         android:text="("
         android:id="@+id/buttonLeftBkt"
-        android:onClick="onButtonLeftBktClick"
         android:layout_row="3"
         android:layout_column="2"
         android:background="@drawable/shape_border_right_bottom_gray"
@@ -68,7 +66,6 @@
         android:layout_height="wrap_content"
         android:text=")"
         android:id="@+id/buttonRightBkt"
-        android:onClick="onButtonRightBktClick"
         android:layout_row="3"
         android:layout_column="3"
         android:background="@drawable/shape_border_right_bottom_gray"
@@ -80,7 +77,7 @@
         android:text="1"
         android:layout_row="4"
         android:layout_column="0"
-        android:onClick="onButton1Click"
+        android:id="@+id/button1"
         android:layout_margin="0dp"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
@@ -92,7 +89,6 @@
         android:layout_height="wrap_content"
         android:text="C"
         android:id="@+id/buttonClearText"
-        android:onClick="onButtonClearTextClick"
         android:layout_row="3"
         android:layout_column="0"
         android:background="@drawable/shape_border_right_bottom_gray"
@@ -104,7 +100,6 @@
         android:layout_row="4"
         android:layout_column="1"
         android:id="@+id/button2"
-        android:onClick="onButton2Click"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
         android:allowUndo="true"
@@ -115,7 +110,6 @@
         android:layout_row="4"
         android:layout_column="2"
         android:id="@+id/button3"
-        android:onClick="onButton3Click"
         android:background="@drawable/shape_border_right_bottom"
         android:layout_margin="0dp"
         android:textColor="#979ca4"
@@ -126,7 +120,6 @@
         android:text="/"
         android:layout_row="4"
         android:id="@+id/buttonSlash"
-        android:onClick="onButtonSlashClick"
         android:background="@drawable/shape_border_right_bottom_gray"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -136,7 +129,6 @@
         android:layout_row="5"
         android:layout_column="0"
         android:id="@+id/button4"
-        android:onClick="onButton4Click"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -146,7 +138,6 @@
         android:layout_row="5"
         android:layout_column="1"
         android:id="@+id/button5"
-        android:onClick="onButton5Click"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -156,7 +147,6 @@
         android:layout_row="5"
         android:layout_column="2"
         android:id="@+id/button6"
-        android:onClick="onButton6Click"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -166,7 +156,6 @@
         android:layout_row="5"
         android:layout_column="3"
         android:id="@+id/buttonMultiply"
-        android:onClick="onButtonMultiplyClick"
         android:background="@drawable/shape_border_right_bottom_gray"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -176,7 +165,6 @@
         android:layout_row="6"
         android:layout_column="0"
         android:id="@+id/button7"
-        android:onClick="onButton7Click"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -186,7 +174,6 @@
         android:layout_row="6"
         android:layout_column="1"
         android:id="@+id/button8"
-        android:onClick="onButton8Click"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -196,7 +183,6 @@
         android:layout_row="6"
         android:layout_column="2"
         android:id="@+id/button9"
-        android:onClick="onButton9Click"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -206,7 +192,6 @@
         android:layout_row="6"
         android:layout_column="3"
         android:id="@+id/buttonMinus"
-        android:onClick="onButtonMinusClick"
         android:background="@drawable/shape_border_right_bottom_gray"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -218,7 +203,6 @@
         android:layout_row="7"
         android:layout_column="0"
         android:id="@+id/button0"
-        android:onClick="onButton0Click"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -228,7 +212,6 @@
         android:layout_row="7"
         android:layout_column="2"
         android:id="@+id/buttonPoint"
-        android:onClick="onButtonPointClick"
         android:background="@drawable/shape_border_right_bottom"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -241,7 +224,6 @@
         android:layout_row="7"
         android:layout_column="3"
         android:id="@+id/buttonPlus"
-        android:onClick="onButtonPlusClick"
         android:background="@drawable/shape_border_right_bottom_gray"
         android:textColor="#979ca4"
         android:textSize="21sp" />
@@ -254,7 +236,7 @@
         android:layout_row="8"
         android:layout_column="0"
         android:id="@+id/buttonEqually"
-        android:onClick="onButtonEquallyClick"
+
         android:background="@drawable/shape_border_right_bottom_orange"
         android:textColor="#ffffff"
         android:layout_gravity="fill_horizontal"

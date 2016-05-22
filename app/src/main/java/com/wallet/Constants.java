@@ -1,30 +1,22 @@
 package com.wallet;
 
-public interface Constants {
+public class Constants {
 
+    public static String PREFERENCES_SPEND = "categorySpend";
 
-    String APP_PREFERENCES_CATEGORY_SPEND = "mywalletcategoryspend";
+    public static String PREFERENCES_INCOME = "categoryIncome";
 
-    String APP_PREFERENCES_CATEGORY_INCOME = "mywalletcategoryincome";
+    public static int CAMERA_CAPTURE = 1;
+    public static int CATEGORY_CAPTURE = 2;
+    public static int CALCULATOR_CAPTURE = 3;
+    public static int CURRENCY = 4;
 
-    String FILTER_DAY = "day";
-    String FILTER_WEEK = "week";
-    String FILTER_MONTH = "month";
-    String FILTER_ALL = "all";
-    String IMAGE_NAME_CHANGE = "change";
-    String IMAGE_NAME_DELETE = "delete";
+    public static String CATEGORY_NAME = "categoryName";
 
-    int CAMERA_CAPTURE = 1;
-    int CATEGORY_CAPTURE = 2;
-    int CALCULATOR_CAPTURE = 3;
-    int CURRENCY = 4;
+    public static String DATE_FORMAT = "yyyy-MM-dd";
+    public static String TIME_FORMAT = "HH:mm";
 
-    String CATEGORY_NAME = "categoryName";
-
-    String DATE_FORMAT = "yyyy-MM-dd";
-    String TIME_FORMAT = "HH:mm";
-
-    String CATEGORY_EVENT_SPEND = "spend";
-    String CATEGORY_EVENT_INCOME = "income";
+    public static String CATEGORY_EVENT_SPEND = "spend";
+    public static String CATEGORY_EVENT_INCOME = "income";
 
 }
